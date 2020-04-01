@@ -1,4 +1,4 @@
-module github.com/stijndehaes/gin-gonic-gorm
+module github.com/stijndehaes/grpc-gorm-migrate
 
 go 1.14
 

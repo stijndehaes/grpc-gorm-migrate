@@ -2,8 +2,8 @@ package main
 
 import (
 	log "github.com/sirupsen/logrus"
-	"github.com/stijndehaes/gin-gonic-gorm/pkg/db"
-	"github.com/stijndehaes/gin-gonic-gorm/pkg/server"
+	"github.com/stijndehaes/grpc-gorm-migrate/pkg/db"
+	"github.com/stijndehaes/grpc-gorm-migrate/pkg/server"
 )
 
 //func main() {

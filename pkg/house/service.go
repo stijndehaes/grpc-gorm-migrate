@@ -3,8 +3,8 @@ package house
 import (
 	"context"
 	"github.com/jinzhu/copier"
-	pb "github.com/stijndehaes/gin-gonic-gorm/pb"
-	"github.com/stijndehaes/gin-gonic-gorm/pkg/db"
+	pb "github.com/stijndehaes/grpc-gorm-migrate/pb"
+	"github.com/stijndehaes/grpc-gorm-migrate/pkg/db"
 )
 
 type Service struct {

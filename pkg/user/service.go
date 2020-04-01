@@ -3,7 +3,7 @@ package user
 import (
 	"context"
 	"github.com/jinzhu/copier"
-	pb "github.com/stijndehaes/gin-gonic-gorm/pb"
+	pb "github.com/stijndehaes/grpc-gorm-migrate/pb"
 )
 
 type Service struct {

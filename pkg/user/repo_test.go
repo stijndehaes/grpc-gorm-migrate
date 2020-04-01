@@ -1,8 +1,8 @@
 package user
 
 import (
-	"github.com/stijndehaes/gin-gonic-gorm/pkg/db"
-	"github.com/stijndehaes/gin-gonic-gorm/pkg/house"
+	"github.com/stijndehaes/grpc-gorm-migrate/pkg/db"
+	"github.com/stijndehaes/grpc-gorm-migrate/pkg/house"
 	"github.com/stretchr/testify/assert"
 	"os"
 	"testing"

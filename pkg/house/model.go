@@ -1,7 +1,7 @@
 package house
 
 import (
-	"github.com/stijndehaes/gin-gonic-gorm/pkg/db"
+	"github.com/stijndehaes/grpc-gorm-migrate/pkg/db"
 )
 
 type House struct {
