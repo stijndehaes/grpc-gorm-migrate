@@ -1,4 +1,3 @@
-TARGET=helloworld
 
 all: clean build
 
@@ -8,8 +7,11 @@ clean:
 fmt:
 	gofmt -w pkg/* main.go
 
+vendor:
+	go mod vendor
+
 build:
-	go build -o $(TARGET) main.go
+	go build main.go
 
 proto:
 	protoc -I. \
