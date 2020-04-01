@@ -34,7 +34,7 @@ func UpMigrate() {
 		panic(err)
 	}
 	err = m.Up()
-	if err != nil {
+	if err != nil && err != migrate.ErrNoChange {
 		panic(err)
 	}
 }
@@ -57,13 +57,13 @@ func DownMigrate() {
 }
 
 type Base struct {
-	ID        string    `gorm:"type:uuid;primary_key" json:"id"`
+	Id        string    `gorm:"type:uuid;primary_key" json:"id"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
 func (base *Base) BeforeCreate(scope *gorm.Scope) error {
-	if base.ID == "" {
+	if base.Id == "" {
 		id := uuid.NewV4().String()
 		return scope.SetColumn("ID", id)
 	}

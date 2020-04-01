@@ -1,0 +1,102 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+
+package pb;
+
+service UserService {
+    rpc GetUsers (UsersRequest) returns (UsersResponse) {
+        option(google.api.http) = {
+			get: "/api/users"
+		};
+    }
+
+    rpc CreatUser (CreateUserRequest) returns (User) {
+        option(google.api.http) = {
+			put: "/api/users"
+			body: "*"
+		};
+    }
+
+    rpc UserWithHouses (UserHousesRequest) returns (UserHousesResponse) {
+        option(google.api.http) = {
+			get: "/api/users/{id}/houses"
+		};
+    }
+}
+
+message UsersRequest {
+}
+
+message UserHousesRequest {
+    string id = 1;
+}
+
+message UserHouse {
+    string user_id = 1;
+    string user_name = 2;
+    string house_id = 3;
+    string house_location = 4;
+}
+
+message UserHousesResponse {
+    repeated UserHouse user_houses = 1;
+}
+
+message User {
+    string id = 1;
+    google.protobuf.Timestamp updated_at = 2;
+    google.protobuf.Timestamp created_at = 3;
+    string name = 4;
+}
+
+message UsersResponse {
+    repeated User users = 1;
+}
+
+message CreateUserRequest {
+    string name = 1;
+}
+
+
+service HouseService {
+    rpc GetHouses (HousesRequest) returns (HousesResponse) {
+        option(google.api.http) = {
+			get: "/api/houses"
+		};
+    }
+
+    rpc StreamHouses (HousesRequest) returns (stream House) {
+        option(google.api.http) = {
+			get: "/api/houses/stream"
+		};
+    }
+
+    rpc CreateHouse (CreateHouseRequest) returns (House) {
+        option(google.api.http) = {
+			put: "/api/houses"
+			body: "*"
+		};
+    }
+}
+
+
+message HousesRequest {
+}
+
+message CreateHouseRequest {
+    string location = 1;
+    string owner_id = 2;
+}
+
+message HousesResponse {
+    repeated House houses = 1;
+}
+
+
+message House {
+    string location = 1;
+    google.protobuf.Timestamp updated_at = 2;
+    google.protobuf.Timestamp created_at = 3;
+    string owner_id = 4;
+}

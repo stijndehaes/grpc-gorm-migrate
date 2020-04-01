@@ -14,4 +14,3 @@ func ListHouses() ([]House, error) {
 func InsertHouse(house *House) error {
 	return db.DBConnection.Create(house).Error
 }
-
