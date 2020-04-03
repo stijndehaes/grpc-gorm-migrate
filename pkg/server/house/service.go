@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/jinzhu/copier"
 	pb "github.com/stijndehaes/grpc-gorm-migrate/pb"
-	"github.com/stijndehaes/grpc-gorm-migrate/pkg/db"
+	"github.com/stijndehaes/grpc-gorm-migrate/pkg/server/db"
 )
 
 type Service struct {

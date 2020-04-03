@@ -1,6 +1,6 @@
 package house
 
-import "github.com/stijndehaes/grpc-gorm-migrate/pkg/db"
+import "github.com/stijndehaes/grpc-gorm-migrate/pkg/server/db"
 
 func ListHouses() ([]House, error) {
 	var houses []House

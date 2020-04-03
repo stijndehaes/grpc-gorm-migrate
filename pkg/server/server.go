@@ -5,8 +5,8 @@ import (
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	log "github.com/sirupsen/logrus"
 	pb "github.com/stijndehaes/grpc-gorm-migrate/pb"
-	"github.com/stijndehaes/grpc-gorm-migrate/pkg/house"
-	"github.com/stijndehaes/grpc-gorm-migrate/pkg/user"
+	"github.com/stijndehaes/grpc-gorm-migrate/pkg/server/house"
+	"github.com/stijndehaes/grpc-gorm-migrate/pkg/server/user"
 	"google.golang.org/grpc"
 	"net"
 	"net/http"
@@ -40,7 +40,7 @@ func (g *Greeter) Start() {
 	}()
 }
 func (g *Greeter) startGRPC() error {
-	log.Info("Starting grpc")
+	log.Info("Starting connection")
 	lis, err := net.Listen("tcp", "localhost:8080")
 	if err != nil {
 		return err
@@ -48,7 +48,7 @@ func (g *Greeter) startGRPC() error {
 	grpcServer := grpc.NewServer()
 	pb.RegisterUserServiceServer(grpcServer, &user.Service{})
 	pb.RegisterHouseServiceServer(grpcServer, &house.Service{})
-	log.Info("Start serving")
+	log.Info("Start serving grpc on localhost:8080")
 	return grpcServer.Serve(lis)
 }
 func (g *Greeter) startREST() error {
@@ -66,6 +66,6 @@ func (g *Greeter) startREST() error {
 	if err != nil {
 		return err
 	}
-	log.Info("Start serving")
+	log.Info("Start serving rest on localhost:8090")
 	return http.ListenAndServe("localhost:8090", mux)
 }

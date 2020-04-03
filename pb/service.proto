@@ -95,8 +95,9 @@ message HousesResponse {
 
 
 message House {
-    string location = 1;
+    string id = 1;
     google.protobuf.Timestamp updated_at = 2;
     google.protobuf.Timestamp created_at = 3;
     string owner_id = 4;
+    string location = 5;
 }

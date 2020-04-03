@@ -200,7 +200,7 @@
     "pbHouse": {
       "type": "object",
       "properties": {
-        "location": {
+        "id": {
           "type": "string"
         },
         "updated_at": {
@@ -212,6 +212,9 @@
           "format": "date-time"
         },
         "owner_id": {
+          "type": "string"
+        },
+        "location": {
           "type": "string"
         }
       }

@@ -2,7 +2,7 @@ package user
 
 import (
 	"database/sql"
-	"github.com/stijndehaes/grpc-gorm-migrate/pkg/db"
+	"github.com/stijndehaes/grpc-gorm-migrate/pkg/server/db"
 )
 
 type User struct {

@@ -1,7 +1,7 @@
 package user
 
 import (
-	"github.com/stijndehaes/grpc-gorm-migrate/pkg/db"
+	"github.com/stijndehaes/grpc-gorm-migrate/pkg/server/db"
 )
 
 func ListUsers() ([]User, error) {

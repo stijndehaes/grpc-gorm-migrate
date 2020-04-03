@@ -2,8 +2,8 @@ package house
 
 import (
 	uuid "github.com/satori/go.uuid"
-	"github.com/stijndehaes/grpc-gorm-migrate/pkg/db"
-	"github.com/stijndehaes/grpc-gorm-migrate/pkg/user"
+	"github.com/stijndehaes/grpc-gorm-migrate/pkg/server/db"
+	"github.com/stijndehaes/grpc-gorm-migrate/pkg/server/user"
 	"github.com/stretchr/testify/assert"
 	"os"
 	"testing"

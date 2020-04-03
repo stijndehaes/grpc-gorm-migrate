@@ -2,7 +2,7 @@
 all: clean build
 
 clean:
-	rm -rf $(TARGET)
+	rm -rf bin
 
 fmt:
 	gofmt -w pkg/* main.go
@@ -11,7 +11,8 @@ vendor:
 	go mod vendor
 
 build:
-	go build main.go
+	go build -o bin/server cmd/server.go
+	go build -o bin/client cmd/client.go
 
 proto:
 	protoc -I. \
