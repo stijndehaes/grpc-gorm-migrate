@@ -46,5 +46,5 @@ You also need to install [the protoc tool](http://google.github.io/proto-lens/in
 After that you can run:
 
 ```bash
-make protoc
+make proto
 ```
