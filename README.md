@@ -41,6 +41,13 @@ git clone https://github.com/grpc-ecosystem/grpc-gateway.git
 This is because you need the proto annotations in that project, these are ignored
 by go 1.14.x if you check them out in the vendor folder.
 
+Additionally, you need to get the following plugins
+
+```bash
+go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
+go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
+```
+
 You also need to install [the protoc tool](http://google.github.io/proto-lens/installing-protoc.html).
 
 After that you can run:
