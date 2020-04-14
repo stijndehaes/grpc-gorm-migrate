@@ -18,14 +18,17 @@ proto:
 	protoc -I. \
 		-I${GOPATH}/src \
 		-I${GOPATH}/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis\
+		-I${GOPATH}/src/github.com/grpc-ecosystem/grpc-gateway\
 		--go_out=plugins=grpc:. pb/*.proto
 	protoc -I. \
 		-I${GOPATH}/src \
 		-I${GOPATH}/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis\
+		-I${GOPATH}/src/github.com/grpc-ecosystem/grpc-gateway\
  		--grpc-gateway_out=logtostderr=true:. pb/*.proto
 	protoc -I. \
 		-I${GOPATH}/src \
 		-I${GOPATH}/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis\
+		-I${GOPATH}/src/github.com/grpc-ecosystem/grpc-gateway\
 		--swagger_out=logtostderr=true:. pb/*.proto
 
 create-user:

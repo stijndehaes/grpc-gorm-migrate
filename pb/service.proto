@@ -1,8 +1,34 @@
 syntax = "proto3";
 import "google/protobuf/timestamp.proto";
-import "google/api/annotations.proto";
+import "github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/google/api/annotations.proto";
+import "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options/annotations.proto";
 
 package pb;
+
+option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
+	info: {
+		title: "Example service api";
+		version: "1.0";
+	};
+	schemes: HTTPS;
+	responses: {
+		key: "403";
+		value: {
+			description: "Returned when the user does not have permission to access the resource.";
+		}
+	}
+	responses: {
+		key: "404";
+		value: {
+			description: "Returned when the resource does not exist.";
+			schema: {
+				json_schema: {
+					type: STRING;
+				}
+			}
+		}
+	}
+};
 
 service UserService {
     rpc GetUsers (UsersRequest) returns (UsersResponse) {
